@@ -88,6 +88,17 @@ def process_edit_customer(customer_id):
         return f"Customer with id {customer_id} is not found"
 
 
+@app.route('customers/<int:customer_id>/delete')
+def show_delete_customer(customer_id):
+    # find the customer
+    customer_to_delete = None
+    for customer in database:
+        if customer["id"] == customer_id:
+            customer_to_edit = customer
+
+
+
+
 # "magic code" -- boilerplate
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
