@@ -1,0 +1,23 @@
+{%extends 'base.template.html'%}
+
+{%block content%}
+<form method="POST">
+    <div>
+        <label class="form-label">First Name</label>
+        <input type="text" class="form-control" name="first_name" value="{{customer.first_name}}"/>
+    </div>
+    <div>
+        <label class="form-label">Last Name</label>
+        <input type="text" class="form-control" name="last_name" value="{{customer.last_name}}"/>
+    </div>
+    <div>
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" name="email" value="{{customer.email}}"/>
+    </div>
+    <div>
+        <label class="form-label">Can send marketing material</label>
+        <input type="checkbox" name="can_send" {% if customer.send_marketing_material %} checked {%endif%}/>
+    </div>
+    <input type="submit" value="Add Customer"/>
+</form>
+{%endblock%}
